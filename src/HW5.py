@@ -13,6 +13,8 @@ def BMI_Calculator(weight, height) -> str:
             return "Moderate obesity"
         case bmi if bmi >= 35:
             return "Severe obesity"
+        case _:
+            return "Invalid"
 height = float(input())
 weight = float(input())
 category = BMI_Calculator(weight, height)
