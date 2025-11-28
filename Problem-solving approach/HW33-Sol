@@ -1,0 +1,7 @@
+1. n , m ,condition rules are n >= m >=condition
+2. c must exists in the string exist
+3. Generates the length of n string data that every char must in exist
+4. Check the length of m string substring include the length of condition char c 
+5. Add Effective data number 1
+
+
