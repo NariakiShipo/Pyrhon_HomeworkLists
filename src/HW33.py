@@ -1,27 +1,31 @@
-def CheckIfEffective(data):
-    return
+exist_str = input().strip()
+n = int(input().strip())
+m = int(input().strip())
+condition = int(input().strip())
+target_c = input().strip()
 
-def textGenerator(s):
-    if len(s)==1:
-        return [s]
-    result = []
-    for i in range(len(s)):
-        result += [s[i]+ sub for sub in textGenerator(s[:i]+s[i+1:])]
-    # 使用list 產生器得到所有排列結果
-    return result
-def main():  
-    a= "abc"
-    n= 3
-    text =""
-    for _ in range(2):
-        text = ''
+# 用全域變數記錄有效字串數量
+count = 0
 
-    # exist = input()
-    # if 5 < len(exist) or len(exist) < 1: exit()
-    # n = int(input())
-    # if 8 < n or n < 1: exit()
-    # m = int(input())
-    # condition = int(input())
-    # if condition > m or m > n: exit()
-if __name__ == "__main__":
-    main()
+#check the sub string is vaild
+def is_vaild(s) -> bool:
+    for i in range(len(s) - m + 1):
+        sub_string = s[i: i + m]
+        count_c = sub_string.count(target_c)
+        if count_c < condition:
+            return False
+    return True
+
+def generate_strings(current_s=""):
+    global count
+    
+    if len(current_s) == n:
+        if is_vaild(current_s):
+            count += 1
+        return
+    
+    for char in exist_str:
+        generate_strings(current_s + char)
+
+generate_strings()
+print(count)
