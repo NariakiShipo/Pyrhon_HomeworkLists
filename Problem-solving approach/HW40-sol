@@ -1,0 +1,27 @@
+假設 x = 10 x 10
+
+橫線 : x[0 - 10][index]
+直線 : x[index][0 - 10]
+
+對角線 : x[index][index] = [0][0] [1][1] [2][2] [3][3] [4][4]...
+X型線 : x[index][index] + x[index][n- index]
+L型線 : x[index][0]+x[n][index]
+
+檢查流程: L型線 -> X型線 -> 對角線 -> 直線 -> 橫線
+
+HelpFunction:
+    is_horizontal :  檢查水平
+    is_vertical :  檢查垂直
+    is_diagonal :  檢查對角線
+    is_x_line :  檢查X型線
+    is_l_line :  檢查L型線
+
+    count_bingo_lines :  計算連線數
+    print_winner:  輸出贏家
+MainFunction:
+        1.n : 3 <= n <= 6
+        num : 1~nxn
+        2.m: match num count (n <= m <= n*n)
+        3.player_a: nxn
+        4.player_b: nxn
+        5.match_num: m
