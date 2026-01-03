@@ -39,9 +39,10 @@ def process_dl(article, del_sentence_num):
 
 def process_rp(article:list, be_replaced_word, replace_word):
     for i in range(len(article)):
-        if be_replaced_word in article[i]:
-            index = article[i].index(be_replaced_word)
-            article[i][index] = replace_word
+       indices = [idx for idx, word in enumerate(article[i]) if word == be_replaced_word]
+       for index in indices:
+           article[i][index] = replace_word
+
 
 
 def process_c(article):
