@@ -4,6 +4,7 @@ def next_cave(caves_info, bag_weight_limit, current_weight , current_value, cave
         visited = set()
     if cave_id == 0 or cave_id in visited:
         return current_value
+    
     _ , val, weight, cave_1, cave_2 = caves_info[cave_id - 1]
     if current_weight + weight >= bag_weight_limit:
         return current_value
@@ -43,7 +44,7 @@ def explore_caves(caves_info, first_cave, bag_weight_limit):
 def main():
     cave_counts , first_cave = map(int, input().split())
     bag_weight_limit = int(input())
-    caves_info = list() #caves_info[0] = cave_number,caves_info[1] = gole_value,caves_info[2] = gold_weight,
+    caves_info = list() #caves_info[0] = cave_number,caves_info[1] = gold_value,caves_info[2] = gold_weight,
     #caves_info[3,4]=next cave
     for _ in range (cave_counts):
         data = [int(x) for x in input().split()]
